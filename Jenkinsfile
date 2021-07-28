@@ -5,6 +5,9 @@ pipeline{
     stages{
             stage("build"){
                 steps{
+                    script{
+                        bat 'mvn build'
+                    }
                         echo 'Building Project'
                 }
 
@@ -12,6 +15,9 @@ pipeline{
 
                 stage("test"){
                     steps{
+                        script{
+                                bat 'mvn install'
+                            }
                         echo 'Testing Project'
                     }
 
@@ -19,10 +25,18 @@ pipeline{
 
                 stage("deploy"){
                     steps{
+                        script{
+                            bat 'mvn test'
+                        }
                          echo 'Deploying Project'
                     }
 
                         }
+
+    }
+
+    post{
+
 
     }
 
