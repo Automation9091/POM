@@ -1,5 +1,7 @@
 pipeline{
-    //where to execute
+
+    agent any
+
     stages{
             stage("build"){
                 steps{
