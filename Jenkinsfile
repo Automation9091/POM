@@ -6,7 +6,7 @@ pipeline{
             stage("build"){
                 steps{
                     script{
-                        bat 'mvn build'
+                        bat 'mvn compile'
                     }
                         echo 'Building Project'
                 }
